@@ -1,28 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter ,RouterProvider} from "react-router-dom"
 import './index.css';
 import App from './App';
 import About from "./components/About";
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter ,RouterProvider,Routes,Route} from "react-router-dom"
+import Contact from './components/Contact';
+import Error from './components/Error';
+
+import Body from './components/Body';
 
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <div>APPP</div>,
+    element: <App></App>,
+    children:[
+      {
+        path: '/',
+        element: <Body></Body>,
+      },
+      {
+        path: '/about',
+        element: <About></About>,
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>,
+      },
+    ],
+    errorElement:<Error></Error>
   },
-  {
-    path: '/about',
-    element: <div>About</div>,
-  },
+ 
 ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <App></App>
     <RouterProvider   router={appRouter}/>
-    // router={router}/>
 );
 
 
