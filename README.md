@@ -4,7 +4,7 @@ A full-stack food delivery web application inspired by Swiggy. This clone allows
 
 ## 🚀 Demo
 
-Live demo: [)  
+Live demo: 
 ---
 
 ## 📌 Features
